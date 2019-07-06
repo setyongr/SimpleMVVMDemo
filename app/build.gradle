@@ -44,4 +44,9 @@ dependencies {
     // For Kotlin use navigation-fragment-ktx
     implementation "android.arch.navigation:navigation-ui-ktx:$nav_version"
     implementation 'com.google.android.material:material:1.0.0'// For Kotlin use navigation-ui-ktx
+
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.0-M2'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.0-M2'
+    implementation 'com.squareup.retrofit2:retrofit:2.6.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.6.0'
 }

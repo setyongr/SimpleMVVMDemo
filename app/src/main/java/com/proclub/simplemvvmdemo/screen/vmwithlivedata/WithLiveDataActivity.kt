@@ -1,6 +1,7 @@
 package com.proclub.simplemvvmdemo.screen.vmwithlivedata
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -16,12 +17,32 @@ class WithLiveDataActivity: AppCompatActivity() {
 
         viewModel = ViewModelProviders.of(this).get(MySecondViewModel::class.java)
 
-        viewModel.getCounter().observe(this, Observer {
+        setUpCounter()
+        setUpGetRepo()
+    }
+
+    private fun setUpCounter() {
+        viewModel.counter.observe(this, Observer {
             textData.text = it.toString()
         })
 
         buttonAdd.setOnClickListener {
             viewModel.increaseCounter()
         }
+    }
+
+    private fun setUpGetRepo() {
+        buttonGetRepo.setOnClickListener {
+            viewModel.getRepo()
+        }
+
+        viewModel.isLoading.observe(this, Observer {
+            loading.visibility = if (it) View.VISIBLE else View.GONE
+            buttonGetRepo.isEnabled = !it
+        })
+
+        viewModel.repos.observe(this, Observer {
+            textData2.text = it.first().name
+        })
     }
 }

@@ -13,9 +13,28 @@
         android:textAlignment="center"
         android:textSize="24sp" />
 
+    <ProgressBar
+        android:id="@+id/loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/textData2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="25sp" />
+
     <Button
         android:id="@+id/buttonAdd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Add Something" />
+        android:text="Increase Counter" />
+
+    <Button
+        android:id="@+id/buttonGetRepo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Get Repo"/>
 </LinearLayout>
